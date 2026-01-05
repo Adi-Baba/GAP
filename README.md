@@ -5,23 +5,23 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**GAP** is a production-grade, high-fidelity image codec designed to bridge the void between lossless integrity and perceptual compression. It utilizes a novel **Hybrid Architecture** combining the high-concurrency orchestration of **Go** with the bare-metal mathematical precision of **Zig**.
+**GAP** is a high-fidelity image codec designed to balance lossless integrity and perceptual compression. It combines **Go** for orchestration with **Zig** for core mathematics.
 
-Unlike JPEG (DCT) or WebP (Predictive), GAP uses a **Polylogarithmic Spectral Transform** that preserves micro-texture and structural phase coherence, making it exceptional for high-quality archival and detailed imagery.
+Unlike JPEG (DCT) or WebP (Predictive), GAP uses a **Polylogarithmic Spectral Transform** that preserves micro-texture and structural phase coherence, making it suitable for high-quality archival.
 
 ---
 
 ## 🚀 Key Features (v1.3.00)
 
 ### 🧠 Core Technology
--   **Polylogarithmic Transform**: A novel spectral basis (in `core/src/pltm.zig`) that aligns with natural image gradients better than cosine waves.
--   **FWSM (Frequency-Weighted Spectral Masking)**: Intelligently separates signal from noise, protecting structural integrity while discarding imperceptible data.
--   **5-Stream Split Encoding**: Advanced entropy coding that separates Angles, Counts, MaxVals, Indices, and Values into parallel streams for maximum compression density.
+-   **Polylogarithmic Transform**: A spectral basis (in `core/src/pltm.zig`) that aligns with natural image gradients.
+-   **FWSM (Frequency-Weighted Spectral Masking)**: Separates signal from noise, protecting structural integrity while discarding imperceptible data.
+-   **5-Stream Split Encoding**: Entropy coding that separates Angles, Counts, MaxVals, Indices, and Values into parallel streams.
 
-### 🎨 Visual & Quality
--   **DGAA (Directional Guided Antialiasing)**: A post-processing neural-analog filter that detects edge orientation and smooths *along* the edge, eliminating "whisker" aliasing and stair-stepping.
--   **Chroma-Locked Elastic Deblocking**: A context-aware filter that removes block boundaries without blurring textures, processing RGB channels in unison to prevent color tearing.
--   **High Fidelity Mode**: Capable of near-lossless reconstruction (`-s 0.05`) that is indistinguishable from the original PNG.
+### 🎨 Image Quality
+-   **DGAA (Directional Guided Antialiasing)**: A post-processing filter that detects edge orientation and smooths *along* the edge to reduce aliasing.
+-   **Elastic Deblocking**: Removes block boundaries without blurring textures, processing RGB channels in unison.
+-   **High Fidelity Mode**: Reconstruction (`-s 0.05`) designed to be visually indistinguishable from the original.
 
 ### ⚡ Performance
 -   **Parallel Pipeline**: Fully multi-threaded encoding and decoding.
