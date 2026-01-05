@@ -11,7 +11,7 @@ Unlike JPEG (DCT) or WebP (Predictive), GAP uses a **Polylogarithmic Spectral Tr
 
 ---
 
-## 🚀 Key Features (v1.3.00)
+## 🚀 Key Features (v1.2.02)
 
 ### 🧠 Core Technology
 -   **Polylogarithmic Transform**: A spectral basis (in `core/src/pltm.zig`) that aligns with natural image gradients.
@@ -185,7 +185,7 @@ GAP is tuned for **High Fidelity**. It is designed to look better than JPEG at h
 ## 🏆 Performance Benchmarks
 *Tested on Local Machine, Parrot.png (20MB)*
 
-| Metric | GAP v1.3 | JPEG (Standard) |
+| Metric | GAP v1.2.02 | JPEG (Standard) |
 | :--- | :--- | :--- |
 | **Encoding Time** | 2.1s | 0.8s |
 | **Decoding Time** | 19.4s | 0.5s |
