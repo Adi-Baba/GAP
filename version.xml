@@ -13,20 +13,20 @@
             <change type="infra">Cross-platform build system (build_all.ps1)</change>
             <change type="infra">Benchmark Suite implementation</change>
         </release>
-        <release version="1.1.02" date="2026-01-04">
+        <release version="1.1.02" date="2025-12-14">
             <change type="feature">Custom Range Coder (Entropy Coding) replacing Gzip</change>
             <change type="feature">5-Stream Split Encoding (Angles, Counts, MaxVals, Indices, Values)</change>
             <change type="performance">Split stream parallel decoding</change>
         </release>
-        <release version="1.1.01" date="2026-01-04">
+        <release version="1.1.01" date="2025-11-29">
             <change type="feature">Chroma Subsampling (4:2:0) - 25-35% size reduction</change>
             <change type="feature">Downsampling (Encoder) and Bilinear Upsampling (Decoder)</change>
         </release>
-        <release version="1.0.05" date="2026-01-04">
+        <release version="1.0.05" date="2025-11-20">
             <change type="optimization">Optimized compression ratio to achieved 50% target (7.5MB)</change>
             <change type="tuning">Balanced chroma settings (s=0.04, t=0.22) for crispness + size</change>
         </release>
-        <release version="1.0.04" date="2026-01-04">
+        <release version="1.0.04" date="2025-11-01">
             <change type="performance">FFT optimization - O(N log N) replaces O(N²) DFT</change>
             <change type="performance">Parallel plane encoding with goroutines</change>
             <change type="performance">Parallel YCbCr→RGB conversion</change>

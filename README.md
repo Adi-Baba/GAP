@@ -1,6 +1,6 @@
 # GAP: Gradient-Aligned Polylogarithmic Codec
 
-![Version](https://img.shields.io/badge/Version-1.3.00-blue)
+![Version](https://img.shields.io/badge/Version-1.2.02-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-Hybrid%20(Go%20%2B%20Zig)-blueviolet)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)

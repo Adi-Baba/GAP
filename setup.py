@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gap-image",
-    version="1.3.0",
+    version="1.2.02",
     description="Python wrapper for the GAP Image Codec",
     author="GAP Team",
     packages=find_packages(where="python"),
