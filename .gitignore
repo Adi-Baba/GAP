@@ -1,0 +1,51 @@
+# OS & Environment
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Go
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+engine/gap
+engine/gap.exe
+
+# Zig
+.zig-cache/
+zig-out/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+*.egg
+
+# Project Output
+*_output.png
+*.gap
+
+# Large Test Data
+encoded/
+decoded/
+*.png
+*.jpg
+*.jpeg
+
+# Force include documentation images
+!docs/images/*.png
+
+# Force include bundled binaries for Python Plug-and-Play
+!python/pygap/bin/**
+!python/pygap/bin/**/*.exe
+!python/pygap/bin/**/*.dll
+!python/pygap/bin/**/*.so
+!python/pygap/bin/**/*.dylib
+
+# Build Script Output (redundant with bundled bin, keep repo clean)
+/dist/

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gap-engine>
+    <version>1.3.00</version>
+    <name>GAP Engine</name>
+    <description>Gradient-Aligned Polylogarithmic Transform Image Codec</description>
+    <release-date>2026-01-05</release-date>
+    
+    <changelog>
+        <release version="1.2.02" date="2026-01-05">
+            <change type="fix">Whisker Aliasing: Lowered FWSM noise floor (0.0001) to preserve fine details</change>
+            <change type="quality">Tuned Deblocking (Passes=2, Sigma=22) to eliminate block artifacts while keeping sharpness</change>
+            <change type="quality">DGAA Sensitivity increased (Threshold=30) for better edge reconstruction</change>
+            <change type="infra">Cross-platform build system (build_all.ps1)</change>
+            <change type="infra">Benchmark Suite implementation</change>
+        </release>
+        <release version="1.1.02" date="2026-01-04">
+            <change type="feature">Custom Range Coder (Entropy Coding) replacing Gzip</change>
+            <change type="feature">5-Stream Split Encoding (Angles, Counts, MaxVals, Indices, Values)</change>
+            <change type="performance">Split stream parallel decoding</change>
+        </release>
+        <release version="1.1.01" date="2026-01-04">
+            <change type="feature">Chroma Subsampling (4:2:0) - 25-35% size reduction</change>
+            <change type="feature">Downsampling (Encoder) and Bilinear Upsampling (Decoder)</change>
+        </release>
+        <release version="1.0.05" date="2026-01-04">
+            <change type="optimization">Optimized compression ratio to achieved 50% target (7.5MB)</change>
+            <change type="tuning">Balanced chroma settings (s=0.04, t=0.22) for crispness + size</change>
+        </release>
+        <release version="1.0.04" date="2026-01-04">
+            <change type="performance">FFT optimization - O(N log N) replaces O(N²) DFT</change>
+            <change type="performance">Parallel plane encoding with goroutines</change>
+            <change type="performance">Parallel YCbCr→RGB conversion</change>
+            <change type="performance">Parallel deblocking filter</change>
+            <change type="performance">1MB buffered I/O for faster stream processing</change>
+            <change type="performance">Batch header reads and direct pixel access</change>
+            <change type="quality">Lossless chroma encoding preserves original colors</change>
+            <change type="quality">Precomputed twiddle factors for numerical stability</change>
+        </release>
+    </changelog>
+    
+    <components>
+        <component name="core" language="Zig" path="core/src/">
+            <file>root.zig</file>
+            <file>pltm.zig</file>
+            <file>gradient.zig</file>
+            <file>entropy.zig</file>
+        </component>
+        <component name="engine" language="Go" path="engine/">
+            <file>main.go</file>
+            <file>encoder.go</file>
+            <file>decoder.go</file>
+            <file>bridge.go</file>
+        </component>
+    </components>
+    
+    <performance benchmark="Parrot.jpg" resolution="4016x6016" patches="1132512">
+        <metric name="encode" value="4.0" unit="seconds"/>
+        <metric name="decode" value="4.6" unit="seconds"/>
+        <metric name="total" value="8.6" unit="seconds"/>
+        <metric name="size" value="5.04" unit="MB (35%)"/>
+        <metric name="speedup" value="34x" baseline="5 minutes"/>
+    </performance>
+</gap-engine>
